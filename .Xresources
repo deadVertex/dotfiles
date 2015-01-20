@@ -1,0 +1,77 @@
+!xterm*faceName: Liberation Mono:size=14:antialias=true
+!xterm*font: terminus-12
+!xterm*vt100*geometry: 80x50
+!xterm*saveLines: 2000
+!xterm*boldMode: false
+!xterm*boldFont: terminus-12
+!xterm*colorBDMode: true
+!xterm*colorBD: rgb:fc/fc/fc
+
+!*background:#222222
+!*foreground:#e8e9ca
+
+!*color0:    #222222
+!*color1:    #8b3e2f
+!*color2:    #526f33
+!*color3:    #665847
+!*color4:    #4a708b
+!*color5:    #7a378b
+!*color6:    #528b8b
+!*color7:    #999999
+
+!*color8:    #4c4c4c
+!*color9:    #d75f00
+!*color10:   #cee318
+!*color11:   #eee685
+!*color12:   #9ac0cd
+!*color13:   #9f79ee
+!*color14:   #79cdcd
+!*color15:   #e8e9ca
+
+! special
+*.foreground:   #ddccaa
+*.background:   #222222
+*.cursorColor:  #bd5049
+
+! black
+*.color0:       #554444
+*.color8:       #554444
+
+! red
+*.color1:       #bd5049
+*.color9:       #bd5049
+
+! green
+*.color2:       #808d49
+*.color10:      #808d49
+
+! yellow
+*.color3:       #b98d50
+*.color11:      #b98d50
+
+! blue
+*.color4:       #506d79
+*.color12:      #506d79
+
+! magenta
+*.color5:       #79596d
+*.color13:      #79506d
+
+! cyan
+*.color6:       #6d6970
+*.color14:      #6d6970
+
+! white
+*.color7:       #d9cda0
+*.color15:      #d9cda0
+
+URxvt.loginShell: true
+URxvt.geometry: 80x50
+URxvt.saveLines: 10000
+URxvt.cutchars: "`\"'&()*,:;<=>?[\\]^{|}$"
+URxvt.font: xft:SourceCodePro:antialias=true:pixelsize=14
+URxvt.scrollBar: false
+URxvt.visualBell: false
+// this is SO AWESOME:
+URxvt.fading: 15
+// URxvt spells "eightBitInput" as "meta8" and defaults it to false
