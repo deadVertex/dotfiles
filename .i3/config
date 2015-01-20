@@ -168,7 +168,6 @@ bar {
         status_command i3status
 }
 
-exec_always feh --bg-center "~/Pictures/bg01.jpg"
 exec_always xrdb ~/.Xresources
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 2 +5%
