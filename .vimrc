@@ -18,7 +18,7 @@ set guioptions-=L
 
 filetype off
 
-set rtp+=~/.vim/bundle/vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/vundle.vim'
@@ -38,6 +38,7 @@ Plugin 'bkad/CamelCaseMotion'
 Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'jeetsukumaran/vim-buffergator'
+Plugin 'nanotech/jellybeans.vim'
 
 call vundle#end()
 filetype plugin on
