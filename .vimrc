@@ -15,8 +15,15 @@ ino <up> <Nop>
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" use the vimfiles directory instead of .vim for storing plugins if windows.
+if has("win32") || has("win16")
+  set rtp+=~/vimfiles/bundle/Vundle.vim/
+  let path='~/vimfiles/bundle'
+  call vundle#begin(path)
+else
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+endif
 
 Plugin 'gmarik/vundle.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
@@ -28,6 +35,7 @@ Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'MarcWeber/vim-addon-local-vimrc'
+Plugin 'tpope/vim-dispatch'
 
 call vundle#end()
 filetype plugin on
@@ -134,3 +142,11 @@ nmap <leader>bl :BuffergatorOpen<cr>
 " Shared bindings from Solution #1 from earlier
 nmap <leader>T :enew<cr>
 nmap <leader>bq :bp <BAR> bd #<r>
+
+"===================================
+" WINDOWS SPECIFIC
+"===================================
+if has("win32") || has("win16")
+  set guifont=Droid\ Sans\ Mono:h10
+  set backspace=2
+endif
