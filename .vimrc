@@ -9,71 +9,84 @@ ino <left> <Nop>
 ino <right> <Nop>
 ino <up> <Nop>
 
+"===================================
+" PLUGIN MANAGER
+"===================================
 set nocompatible
-
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions-=L
-
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'shawncplus/skittles_berry'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'kien/ctrlp.vim'
-Plugin 'bkad/CamelCaseMotion'
-Plugin 'scrooloose/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'nanotech/jellybeans.vim'
-Plugin 'rhysd/vim-clang-format'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'MarcWeber/vim-addon-local-vimrc'
 
 call vundle#end()
 filetype plugin on
 filetype plugin indent on
-set number
-syntax enable
+
+"===================================
+" COLOURS
+"===================================
 set background=dark
 color jellybeans
-set tabstop=2
-set shiftwidth=2
-set expandtab
+syntax enable " enable syntax processing.
+
+"===================================
+" SPACES AND TABS
+"===================================
+set tabstop=2 " number of spaces per TAB.
+set shiftwidth=2 " number of spaces used when indenting text.
+set softtabstop=0 " number o spaces inserted when inserting TAB.
+set expandtab       " always convert tabs to spaces.
 set smarttab
-set softtabstop=0
 
-imap <C-J> <Plug>snipMateNextOrTrigger
-smap <C-J> <Plug>snipMateNextOrTrigger
+"===================================
+" UI
+"===================================
+set number " show line numbers.
+set cursorline " highlights the current line.
+set wildmenu " visual autocomplete for command menu.
+set showmatch " highlights matching [{()}]
+set laststatus=2 " last window always has a status line.
+set nowrap " disables text wrapping.
 
-set laststatus=2
-set nowrap
-set linebreak
-set cursorline
-set tags=./tags,tags,.tags
+" highlights the 80th column.
+if ( exists( '+colorcolumn' ) )
+  set colorcolumn=80
+  highlight ColorColumn ctermbg=9
+endif
 
-"Syntastic
-let g:syntastic_check_on_open = 1
-let g:syntastic_lua_checkers = [ "luac" ]
-let g:syntastic_luacheck_args = "--no-unused-args"
+" hides all of the extra UI in GVim.
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
 
+"===================================
+" SEARCHING
+"===================================
+set incsearch " search as characters are entered.
+set tags=./tags,tags,.tags " acceptable names for tag files.
+
+"===================================
+" VIM-AIRLINE PLUGIN
+"===================================
 "vim-airline
 let g:airline#extensions#tabline#enabled = 1 "Enable the list of buffers.
 let g:airline#extensions#tabline#fnamemode = ':t' "Show just the filename.
 
+"===================================
+" CTRL-P PLUGIN
+"===================================
 "CtrlP config from
 "https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
 " Setup some default ignores
@@ -95,6 +108,9 @@ nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
 
+"===================================
+" BUFFERGATOR PLUGIN
+"===================================
 "Buffergator config from
 "https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
 " Use the right side of the screen
@@ -118,12 +134,3 @@ nmap <leader>bl :BuffergatorOpen<cr>
 " Shared bindings from Solution #1 from earlier
 nmap <leader>T :enew<cr>
 nmap <leader>bq :bp <BAR> bd #<r>
-
-" vim-clang-format
-map <leader>kc :ClangFormat<cr>
-
-" Show 80th column
-if ( exists( '+colorcolumn' ) )
-  set colorcolumn=80
-  highlight ColorColumn ctermbg=9
-endif
