@@ -10,13 +10,14 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+set $gs 12
 
-set $lightBlue #628196
+set $lightBlue #087ea9
 
 # Window colors         border  backgr. text    indicator
 client.focused          #222323 $lightBlue 444444 #888888 #444444
-client.focused_inactive #222323 #222323 #888888 #484e50
-client.unfocused        #222323 #222323 #888888 #292d2e
+client.focused_inactive #222323 #222222 #888888 #484e50
+client.unfocused        #222323 #222222 #888888 #292d2e
 client.urgent           #2f343a #8c644c #888888 #900000
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -169,11 +170,19 @@ bar {
 }
 
 exec_always xrdb ~/.Xresources
+exec_always sh ~/.fehbg
+exec nm-applet
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 2 +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume 2 -- -5%
 
 bindsym $mod+g exec google-chrome
 bindsym $mod+Shift+v exec gvim
+bindsym $mod+Shift+t exec thunderbird
 
-new_window 1pixel
+gap_size $gs
+
+for_window [class="^.*"] border pixel 2
+
+new_float pixel 0
+new_window pixel 0
