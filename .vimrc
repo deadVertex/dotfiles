@@ -34,8 +34,9 @@ Plugin 'godlygeek/tabular'
 Plugin 'jeetsukumaran/vim-buffergator'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'MarcWeber/vim-addon-local-vimrc'
 Plugin 'tpope/vim-dispatch'
+Plugin 'bkad/CamelCaseMotion'
+Plugin 'rhysd/vim-clang-format'
 
 call vundle#end()
 filetype plugin on
@@ -73,11 +74,15 @@ if ( exists( '+colorcolumn' ) )
   highlight ColorColumn ctermbg=9
 endif
 
-" hides all of the extra UI in GVim.
-set guioptions-=m
-set guioptions-=T
-set guioptions-=r
-set guioptions-=L
+if has( "gui_running" )
+  set guifont=Liberation\ Mono\ 13
+
+  " hides all of the extra UI in GVim.
+  set guioptions-=m
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=L
+endif
 
 "===================================
 " SEARCHING
@@ -150,3 +155,22 @@ if has("win32") || has("win16")
   set guifont=Droid\ Sans\ Mono:h10
   set backspace=2
 endif
+
+"===================================
+" CLANG FORMAT
+"===================================
+let g:clang_format#code_style = "llvm"
+let g:clang_format#style_options = {
+      \ "BreakBeforeBraces" : "Allman",
+      \ "ConstructorInitializerIndentWidth": 2,
+      \ "ContinuationIndentWidth" : 2,
+      \ "PointerAlignment": "Right",
+      \ "SpacesInParentheses" : "true"}
+vmap <leader>f :ClangFormat<cr>
+
+"===================================
+" MAKE BINDINGS
+"===================================
+nmap <F6> :make<cr>
+nmap <F5> :!./run.sh<cr>
+
