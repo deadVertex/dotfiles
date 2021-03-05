@@ -15,11 +15,17 @@ function create_or_replace_symlink() {
 	ln -s "$CONFIG_FILE_PATH" "$SYMLINK_PATH"
 }
 
+# NEOVIM
 create_or_replace_symlink \
     "$DOT_FILE_DIR/neovim/init.vim" \
     "$HOME/.config/nvim/init.vim"
 
+# ZSH
+create_or_replace_symlink \
+    "$DOT_FILE_DIR/zsh/zshrc" \
+    "$HOME/.zshrc"
+
 # ln -s "$DOT_FILE_DIR/zsh/zshrc" "$HOME/.zshrc"
 # ln -s "$DOT_FILE_DIR/tmux/config" "$HOME/.tmux.conf"
 
-echo "Symlinks to dot files created/updated for neovim"
+echo "Symlinks to dot files created/updated for neovim and ZSH"
