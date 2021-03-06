@@ -25,7 +25,9 @@ create_or_replace_symlink \
     "$DOT_FILE_DIR/zsh/zshrc" \
     "$HOME/.zshrc"
 
-# ln -s "$DOT_FILE_DIR/zsh/zshrc" "$HOME/.zshrc"
-# ln -s "$DOT_FILE_DIR/tmux/config" "$HOME/.tmux.conf"
+# TMUX
+create_or_replace_symlink \
+    "$DOT_FILE_DIR/tmux/tmux.conf" \
+    "$HOME/.tmux.conf"
 
-echo "Symlinks to dot files created/updated for neovim and ZSH"
+echo "Symlinks to dot files created/updated for neovim, zsh and tmux"
