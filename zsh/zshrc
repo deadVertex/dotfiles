@@ -3,6 +3,9 @@ alias vim=nvim
 # Enable vi mode line editing
 bindkey -v
 
+# Add ~/.bin to system path
+export PATH="$HOME/.bin:$PATH"
+
 # PYENV
 function pyenv-init() {
     # Only enable if .pyenv directory exists
