@@ -21,3 +21,6 @@ set signcolumn=yes
 
 noremap J 5j
 noremap K 5k
+
+set splitright
+set splitbelow
