@@ -24,3 +24,20 @@ noremap K 5k
 
 set splitright
 set splitbelow
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+
+" For C++ code formatting
+Plug 'rhysd/vim-clang-format'
+
+" CamelCaseMotion
+Plug 'bkad/CamelCaseMotion'
+
+call plug#end()
+
+" Clang format Config
+autocmd FileType c,cpp,h,cc,hpp vnoremap <leader>f :ClangFormat<cr>
+
+" CamelCaseMotion Config
+call camelcasemotion#CreateMotionMappings(',')
