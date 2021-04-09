@@ -55,3 +55,6 @@ noremap <F6> :Make<cr>
 
 " Yank and paste from the system clipboard
 set clipboard=unnamedplus
+
+noremap ]q :cn<cr>
+noremap [q :cp<cr>
