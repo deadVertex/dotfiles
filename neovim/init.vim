@@ -50,7 +50,12 @@ call camelcasemotion#CreateMotionMappings(',')
 
 " Make bindings
 " TODO: Want per project makeprg
-set makeprg=./build.sh
+if has('win32')
+    set makeprg=build.bat
+    set guifont=SauceCodePro\ Nerd\ Font:h14
+else
+    set makeprg=./build.sh
+endif
 noremap <F6> :Make<cr>
 
 " Yank and paste from the system clipboard
@@ -58,3 +63,6 @@ set clipboard=unnamedplus
 
 noremap ]q :cn<cr>
 noremap [q :cp<cr>
+
+" For neovide on windows see https://github.com/Kethku/neovide/issues/473
+noremap <C-6> <C-^>
