@@ -40,10 +40,15 @@ Plug 'tpope/vim-dispatch'
 " Tabular
 Plug 'godlygeek/tabular'
 
+" Godot syntax highlighting
+Plug 'habamax/vim-godot'
 call plug#end()
 
 " Clang format Config
 autocmd FileType c,cpp,h,cc,hpp vnoremap <leader>f :ClangFormat<cr>
+
+" Override vim-godot on expandtab
+autocmd FileType gd set expandtab
 
 " CamelCaseMotion Config
 call camelcasemotion#CreateMotionMappings(',')
@@ -52,7 +57,7 @@ call camelcasemotion#CreateMotionMappings(',')
 " TODO: Want per project makeprg
 if has('win32')
     set makeprg=build.bat
-    set guifont=SauceCodePro\ Nerd\ Font:h14
+    set guifont=Iosevka\ NF:h16
 else
     set makeprg=./build.sh
 endif
