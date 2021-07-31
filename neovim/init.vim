@@ -18,6 +18,8 @@ set scrolloff=8
 set completeopt=menuone,noinsert,noselect
 set colorcolumn=80
 set signcolumn=no
+set list
+set listchars=tab:>-
 
 noremap J 5j
 noremap K 5k
@@ -42,13 +44,13 @@ Plug 'godlygeek/tabular'
 
 " Godot syntax highlighting
 Plug 'habamax/vim-godot'
+
+" Commenting functions
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 " Clang format Config
 autocmd FileType c,cpp,h,cc,hpp vnoremap <leader>f :ClangFormat<cr>
-
-" Override vim-godot on expandtab
-autocmd FileType gd set expandtab
 
 " CamelCaseMotion Config
 call camelcasemotion#CreateMotionMappings(',')
