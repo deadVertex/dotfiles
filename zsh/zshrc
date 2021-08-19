@@ -17,3 +17,15 @@ function pyenv-init() {
         fi
     fi
 }
+
+function start-ssh-agent() {
+    eval "$(ssh-agent -s)"
+}
+
+function base16-shell-init() {
+    # Base16 Shell
+    BASE16_SHELL="$HOME/.config/base16-shell/"
+    [ -n "$PS1" ] && \
+        [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+            eval "$("$BASE16_SHELL/profile_helper.sh")"
+}

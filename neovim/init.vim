@@ -45,8 +45,9 @@ Plug 'godlygeek/tabular'
 " Godot syntax highlighting
 Plug 'habamax/vim-godot'
 
-" Commenting functions
+" Nerd commenter
 Plug 'preservim/nerdcommenter'
+
 call plug#end()
 
 " Clang format Config
