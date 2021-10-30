@@ -48,6 +48,9 @@ Plug 'habamax/vim-godot'
 " Nerd commenter
 Plug 'preservim/nerdcommenter'
 
+" GLSL syntax highlighting
+Plug 'tikhomirov/vim-glsl'
+
 call plug#end()
 
 " Clang format Config
