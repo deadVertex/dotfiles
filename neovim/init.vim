@@ -51,6 +51,12 @@ Plug 'preservim/nerdcommenter'
 " GLSL syntax highlighting
 Plug 'tikhomirov/vim-glsl'
 
+" For faster searching with ag from inside vim
+Plug 'mileszs/ack.vim'
+
+" For git blame
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 " Clang format Config
@@ -77,3 +83,8 @@ noremap [q :cp<cr>
 
 " For neovide on windows see https://github.com/Kethku/neovide/issues/473
 noremap <C-6> <C-^>
+
+" Use ag (if present on the system) as the replacement for ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
