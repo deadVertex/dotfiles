@@ -54,7 +54,7 @@ Plug 'tikhomirov/vim-glsl'
 " For faster searching with ag from inside vim
 Plug 'mileszs/ack.vim'
 
-" For git blame
+" Vim Fugitive
 Plug 'tpope/vim-fugitive'
 
 call plug#end()
