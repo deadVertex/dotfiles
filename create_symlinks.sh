@@ -17,8 +17,8 @@ function create_or_replace_symlink() {
 
 # NEOVIM
 create_or_replace_symlink \
-    "$DOT_FILE_DIR/neovim/init.vim" \
-    "$HOME/.config/nvim/init.vim"
+    "$DOT_FILE_DIR/neovim/init.lua" \
+    "$HOME/.config/nvim/init.lua"
 
 # ZSH
 create_or_replace_symlink \
