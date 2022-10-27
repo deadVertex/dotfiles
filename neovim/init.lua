@@ -103,6 +103,7 @@ vim.g.ackprg = 'ag --vimgrep'
 -- Catppuccin config
 require("catppuccin").setup {
     flavour = "mocha", -- mocha, macchiato, frappe, latte
+    term_colors = true,
     integrations = {
       treesitter = false -- Get rid of warning from catppuccin
     }
