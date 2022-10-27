@@ -78,7 +78,7 @@ Plug('mileszs/ack.vim')
 Plug('tpope/vim-fugitive')
 
 -- For base16 color schemes
-Plug('chriskempson/base16-vim')
+Plug('catppuccin/nvim', { as = 'catppuccin' })
 
 -- For file browsing inside vim
 Plug('nvim-tree/nvim-web-devicons') -- optional, for file icons
@@ -99,3 +99,12 @@ vim.call("camelcasemotion#CreateMotionMappings",',')
 
 -- Ack.vim config
 vim.g.ackprg = 'ag --vimgrep'
+
+-- Catppuccin config
+require("catppuccin").setup {
+    flavour = "mocha", -- mocha, macchiato, frappe, latte
+    integrations = {
+      treesitter = false -- Get rid of warning from catppuccin
+    }
+}
+vim.cmd('colorscheme catppuccin')
